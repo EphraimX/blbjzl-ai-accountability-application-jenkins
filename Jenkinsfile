@@ -14,9 +14,11 @@ pipeline {
         }
       }
     }
-    stage('Deploy'){
+    stage('Build and Deploy Backend Service'){
       steps {
-        echo 'Deploying'
+        dir('backend') {
+          
+        }
       }
     }
   }
