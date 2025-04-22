@@ -1,32 +1,50 @@
-## Overview
+# AI Accountability Application (with Jenkins CI/CD)
 
-This is a simple web application that includes both frontend and backend systems, designed for use in DevOps projects and demonstrations. It provides a foundational structure for integrating CI/CD pipelines, cloud deployments, containerization, and other DevOps practices.
+This is a simple full-stack web application designed for use in DevOps projects. It demonstrates CI/CD best practices, including pipeline automation using **Jenkins**.
 
-**Project Structure**
+## 🛠 Project Structure
 
 ```
 blbjzl-ai-accountability-application/
-├── backend/
-│   ├── main.py
-│   ├── requirements.txt
-│   └── ...
-├── frontend/
-│   ├── public/
-│   │   └── index.html
-│   ├── src/
-│   │   ├── App.tsx
-│   │   ├── Chat.tsx
-│   │   └── ...
-│   ├── package.json
-│   └── ...
+├── backend/           # FastAPI service
+├── frontend/          # React app
+├── Jenkinsfile        # Jenkins pipeline definition
+├── gitpod.yml         # Gitpod environment configuration
 ├── README.md
-└── ...
 ```
 
-**Notes:**
+## 🚀 Jenkins CI/CD
 
-- **backend/**: Contains the FastAPI application, including the main application file (`server.py`) and dependencies listed in `requirements.txt`.
+This project uses a `Jenkinsfile` to define its CI/CD pipeline, which includes:
+- Installing backend and frontend dependencies
+- Building and deploying both services
 
-- **frontend/**: Houses the React application, with the main entry point (`App.tsx`) and other components like `Chat.tsx`. The `public/` directory contains the HTML template, and `package.json` lists the frontend dependencies.
+The Jenkinsfile enables automation of the full build-test-deploy lifecycle.
 
-- **README.md**: Provides an overview of the project.
+## 🧪 Tech Stack
+- **Frontend:** React (TypeScript)
+- **Backend:** FastAPI (Python)
+- **CI/CD:** Jenkins
+- **Dev Environment:** Gitpod
+
+## 📦 Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/EphraimX/blbjzl-ai-accountability-application-jenkins.git
+   ```
+
+2. Navigate to `backend/` and install Python dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Navigate to `frontend/` and install Node packages:
+   ```bash
+   npm install
+   ```
+
+4. You can run both services locally or integrate them into your Jenkins pipeline for automated deployment.
+
+## 📌 Note
+This project serves as a base for testing and deploying AI-related apps with accountability measures using Jenkins.
