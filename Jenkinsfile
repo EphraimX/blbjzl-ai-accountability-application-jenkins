@@ -1,9 +1,17 @@
 pipeline {
   agent any
+  environment {
+    VERCEL_TOKEN = credentials('VERCEL_TOKEN')
+    FLY_API_TOKEN = credentials('FLY_API_TOKEN')
+  }
   stages {
-    stage('Build'){
+    stage('Build & Deploy Frontend Service'){
       steps {
-        echo 'Building'
+        dir('frontend'){
+          sh 'npm install'
+          sh 'npm run build'
+          sh 'npx vercel --prod --token $VERCEL_TOKEN'
+        }
       }
     }
     stage('Deploy'){
