@@ -11,9 +11,9 @@ pipeline {
 
     stage('Build & Deploy Frontend Service'){
 
-      when {
-                environment name: 'SKIP_TEST', value: 'true' // Only runs if SKIP_TEST is set to 'false'
-      }
+      // when {
+      //           environment name: 'SKIP_TEST', value: 'true' // Only runs if SKIP_TEST is set to 'false'
+      // }
 
       steps {
         dir('frontend'){
