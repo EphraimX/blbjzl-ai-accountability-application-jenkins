@@ -10,7 +10,7 @@ pipeline {
         dir('frontend'){
           sh 'npm install'
           sh 'npm run build'
-          sh 'npx vercel --prod --token $VERCEL_TOKEN'
+          sh 'npx vercel --prod --token $VERCEL_TOKEN --yes'
         }
       }
     }
