@@ -27,8 +27,6 @@ pipeline {
     stage('Build and Deploy Backend Service'){
       steps {
         dir('backend') {
-          sh 'curl -L https://fly.io/install.sh | sh'
-          sh 'export PATH="$HOME/.fly/bin:$PATH"'
           sh 'flyctl deploy --remote-only'
         }
       }
